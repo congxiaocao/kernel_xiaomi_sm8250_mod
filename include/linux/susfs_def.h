@@ -44,25 +44,27 @@
 #define DEFAULT_SUS_MNT_GROUP_ID 1000 /* used by mount->mnt_group_id */
 
 /*
- * inode->i_state => storing flag 'INODE_STATE_'
  * mount->mnt.susfs_mnt_id_backup => storing original mnt_id of normal mounts or custom sus mnt_id of sus mounts
  * inode->i_mapping->flags => storing flag 'AS_FLAGS_'
  * nd->state => storing flag 'ND_STATE_'
  * nd->flags => storing flag 'ND_FLAGS_'
  * task_struct->thread_info.flags => storing flag 'TIF_'
  */
-#define INODE_STATE_SUS_PATH BIT(24)
-#define INODE_STATE_SUS_MOUNT BIT(25)
-#define INODE_STATE_SUS_KSTAT BIT(26)
-#define INODE_STATE_OPEN_REDIRECT BIT(27)
 
 #define TIF_NON_ROOT_USER_APP_PROC 33 // thread_info->flags is unsigned long :D
 
+#define AS_FLAGS_SUS_PATH 24
+#define AS_FLAGS_SUS_MOUNT 25
+#define AS_FLAGS_SUS_KSTAT 26
+#define AS_FLAGS_OPEN_REDIRECT 27
 #define AS_FLAGS_ANDROID_DATA_ROOT_DIR 28
 #define AS_FLAGS_SDCARD_ROOT_DIR 29
 #define BIT_ANDROID_DATA_ROOT_DIR BIT(28)
 #define BIT_ANDROID_SDCARD_ROOT_DIR BIT(29)
-
+#define BIT_SUS_PATH BIT(24)
+#define BIT_SUS_MOUNT BIT(25)
+#define BIT_SUS_KSTAT BIT(26)
+#define BIT_OPEN_REDIRECT BIT(27)
 #define ND_STATE_LOOKUP_LAST 32
 #define ND_STATE_OPEN_LAST 64
 #define ND_STATE_LAST_SDCARD_SUS_PATH 128
