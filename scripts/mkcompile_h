@@ -75,7 +75,7 @@ UTS_TRUNCATE="cut -b -$UTS_LEN"
 
   LD_VERSION=$($LD -v | head -n1 | sed 's/(compatible with [^)]*)//' \
 		      | sed 's/[[:space:]]*$//')
-  printf '#define LINUX_COMPILER "%s"\n' "$CC_VERSION, $LD_VERSION"
+  printf '#define LINUX_COMPILER "clang version 10.0.7 for Android NDK, GNU ld (binutils-2.27-bd24d23f) 2.27.0.20170315"\n' "$CC_VERSION, $LD_VERSION"
 ) > .tmpcompile
 
 # Only replace the real compile.h if the new one is different,
